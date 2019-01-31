@@ -17,3 +17,27 @@ return 1;
     return 0;
 }
 }));
+
+var list=[];
+var temp2={};
+var temp={};
+
+for(let i=0;i<arr.length;i++){
+    temp2={};
+    list=[];
+    temp2.name=arr[i].name;
+    temp2.age=arr[i].age;
+    list.push(temp2);
+    if(arr[i].occupation in temp){
+        temp[arr[i].occupation].push(temp2);
+    }else{
+    temp[arr[i].occupation]=list;
+    }
+}
+console.log(temp);
+var map=new Map();
+map.set("names",arr.map(item=>item.name));
+console.log(map);
+
+
+
